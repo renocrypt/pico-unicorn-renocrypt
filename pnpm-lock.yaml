@@ -17,6 +17,12 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      lucide-vue-next:
+        specifier: ^0.403.0
+        version: 0.403.0(vue@3.4.31(typescript@5.5.3))
+      marked:
+        specifier: ^13.0.2
+        version: 13.0.2
       radix-vue:
         specifier: ^1.9.0
         version: 1.9.0(vue@3.4.31(typescript@5.5.3))
@@ -686,8 +692,18 @@ packages:
     resolution: {integrity: sha512-8h/JsUc/2+Dm9RPJnBAmObGnUqTMmsIKThxixMLOkrebSihRhTV0wLD/8BSk6OU6Pbj8hiDTbsI3fLjBJSlhDg==}
     engines: {node: 14 >= 14.21 || 16 >= 16.20 || 18 >=18.20 || 20 || >=22}
 
+  lucide-vue-next@0.403.0:
+    resolution: {integrity: sha512-jmCABan/1sRnNEivFSyy+O47M5MSu7s2KSMsxxw9XlCtIyPiTNRAjj9gu7imUWTeNxkJ1LOKj+/xqjCkEMEL4g==}
+    peerDependencies:
+      vue: '>=3.0.1'
+
   magic-string@0.30.10:
     resolution: {integrity: sha512-iIRwTIf0QKV3UAnYK4PU8uiEc4SRh5jX0mwpIwETPpHdhVM4f53RSwS/vXvN1JhGX+Cs7B8qIq3d6AH49O5fAQ==}
+
+  marked@13.0.2:
+    resolution: {integrity: sha512-J6CPjP8pS5sgrRqxVRvkCIkZ6MFdRIjDkwUwgJ9nL2fbmM6qGQeB2C16hi8Cc9BOzj6xXzy0jyi0iPIfnMHYzA==}
+    engines: {node: '>= 18'}
+    hasBin: true
 
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -1588,9 +1604,15 @@ snapshots:
 
   lru-cache@10.4.1: {}
 
+  lucide-vue-next@0.403.0(vue@3.4.31(typescript@5.5.3)):
+    dependencies:
+      vue: 3.4.31(typescript@5.5.3)
+
   magic-string@0.30.10:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
+
+  marked@13.0.2: {}
 
   merge2@1.4.1: {}
 
