@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { marked } from "marked";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -10,7 +10,7 @@ const title = ref("");
 const date = ref("");
 const isLoading = ref(true);
 
-onMounted(async () => {
+const fetchArticle = async () => {
   isLoading.value = true;
   try {
     // Fetch the article content
@@ -42,7 +42,19 @@ onMounted(async () => {
   } finally {
     isLoading.value = false;
   }
-});
+};
+
+onMounted(fetchArticle);
+
+// Watch for changes in the route
+watch(
+  () => route.params.slug,
+  (newSlug) => {
+    if (newSlug) {
+      fetchArticle();
+    }
+  }
+);
 </script>
 
 <template>
