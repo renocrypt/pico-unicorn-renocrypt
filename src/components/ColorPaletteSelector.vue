@@ -65,6 +65,7 @@ const selectPalette = (palette: (typeof colorPalettes)[0]) => {
           <CommandItem
             v-for="palette in filteredPalettes"
             :key="palette.value"
+            :value="palette.value"
             @select="() => selectPalette(palette)"
           >
             <Check
