@@ -17,4 +17,6 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  base: '/pico-unicorn-renocrypt/',
+  assetsInclude: ['**/*.md'],
 })
