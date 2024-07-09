@@ -20,7 +20,7 @@ onMounted(async () => {
 
 <template>
   <div class="max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold mb-8">Welcome to My Static Site</h1>
+    <h1 class="text-4xl font-bold mb-8">Raspberry Pi Pico</h1>
     <p class="text-xl mb-8">
       Explore our collection of articles on various topics.
     </p>

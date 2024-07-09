@@ -28,7 +28,7 @@ const toggleSidebar = () => {
       <Button @click="toggleSidebar" variant="ghost" size="icon">
         <Menu class="h-6 w-6" />
       </Button>
-      <h1 class="text-2xl font-bold">My Static Site</h1>
+      <h1 class="text-2xl font-bold">Raspberry Pi Pico</h1>
       <Button @click="toggleDarkMode" variant="ghost" size="icon">
         <Sun v-if="isDarkMode" class="h-6 w-6" />
         <Moon v-else class="h-6 w-6" />
