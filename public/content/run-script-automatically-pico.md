@@ -1,3 +1,8 @@
+---
+title: Run Scripts Automatically on Pico
+date: 2023-07-04
+---
+
 `python -m venv venv`
 `pip install rshell`
 

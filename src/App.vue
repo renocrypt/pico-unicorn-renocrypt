@@ -1,15 +1,11 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { Sun, Moon, Menu } from "lucide-vue-next";
+import { Menu } from "lucide-vue-next";
 import { Button } from "@/components/ui/button";
+import NavHeader from "@/components/NavHeader.vue";
+import Sidebar from "@/components/Sidebar.vue";
 
-const isDarkMode = ref(false);
 const isSidebarOpen = ref(false);
-
-const toggleDarkMode = () => {
-  isDarkMode.value = !isDarkMode.value;
-  document.documentElement.classList.toggle("dark", isDarkMode.value);
-};
 
 const toggleSidebar = () => {
   isSidebarOpen.value = !isSidebarOpen.value;
@@ -18,38 +14,23 @@ const toggleSidebar = () => {
 
 <template>
   <div
-    :class="{ dark: isDarkMode }"
     class="min-h-screen bg-pastel-100 dark:bg-pastel-900 text-pastel-900 dark:text-pastel-100"
   >
-    <!-- Navigation Header -->
-    <header
-      class="bg-pastel-200 dark:bg-pastel-800 p-4 flex justify-between items-center"
-    >
-      <Button @click="toggleSidebar" variant="ghost" size="icon">
-        <Menu class="h-6 w-6" />
-      </Button>
-      <h1 class="text-2xl font-bold">Raspberry Pi Pico</h1>
-      <Button @click="toggleDarkMode" variant="ghost" size="icon">
-        <Sun v-if="isDarkMode" class="h-6 w-6" />
-        <Moon v-else class="h-6 w-6" />
-      </Button>
-    </header>
+    <NavHeader>
+      <template #left>
+        <Button @click="toggleSidebar" variant="outline" size="icon">
+          <Menu class="h-6 w-6" />
+        </Button>
+      </template>
+    </NavHeader>
 
     <div class="flex">
-      <!-- Sidebar -->
-      <aside
-        :class="{
-          'translate-x-0': isSidebarOpen,
-          '-translate-x-full': !isSidebarOpen,
-        }"
-        class="w-64 bg-pastel-300 dark:bg-pastel-700 p-4 fixed h-full transition-transform duration-300 ease-in-out"
-      >
-        <h2 class="text-xl font-semibold mb-4">Articles</h2>
+      <Sidebar :isOpen="isSidebarOpen" @close="isSidebarOpen = false">
         <!-- Add your sidebar content here -->
-      </aside>
+      </Sidebar>
 
       <!-- Main Content -->
-      <main class="flex-grow p-8 ml-0 md:ml-64">
+      <main class="flex-grow p-8 ml-0 md:m-auto">
         <router-view></router-view>
       </main>
     </div>

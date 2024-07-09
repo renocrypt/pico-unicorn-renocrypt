@@ -1,26 +1,22 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { Book } from "lucide-vue-next";
-
-interface Article {
-  title: string;
-  path: string;
-}
+import type { Article } from "@/types";
 
 const articles = ref<Article[]>([]);
 
 onMounted(async () => {
   // This is a placeholder. You'll need to implement the actual fetching of markdown files.
   articles.value = [
-    { title: "Article 1", path: "/content/run-script-automatically-pico.md" },
-    { title: "Article 2", path: "/content/test-article.md" },
+    { title: "Article 1", path: "content/run-script-automatically-pico.md" },
+    { title: "Article 2", path: "content/test-article.md" },
   ];
 });
 </script>
 
 <template>
   <div class="max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold mb-8">Raspberry Pi Pico</h1>
+    <h1 class="text-4xl font-bold mb-8">Welcome to My Static Site</h1>
     <p class="text-xl mb-8">
       Explore our collection of articles on various topics.
     </p>
