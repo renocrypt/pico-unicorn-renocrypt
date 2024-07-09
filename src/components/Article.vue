@@ -10,7 +10,7 @@ const fetchArticle = async (path: string) => {
   try {
     const response = await fetch(path);
     const markdown = await response.text();
-    content.value = marked(markdown);
+    content.value = marked(markdown) as string;
   } catch (error) {
     console.error("Error fetching article:", error);
     content.value = "<p>Error loading article</p>";
